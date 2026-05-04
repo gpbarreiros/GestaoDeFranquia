@@ -1,0 +1,29 @@
+# Ambiente Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Variáveis de ambiente
+.env
+*.env
+
+# Banco de dados
+*.db
+*.sqlite
+
+# IDEs
+.vscode/
+.idea/
+
+# Docker
+*.log
+
+# Alembic
+migrations/versions/*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db
