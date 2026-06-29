@@ -31,18 +31,18 @@ def processar(
             status_code=status.HTTP_409_CONFLICT,
             detail={
                 "error": "PEDIDO_STATUS_INVALIDO",
-                "message": f"Pedido não está aguardando pagamento. Status atual: {pedido.status.value}",
+                "message": "Pedido não está aguardando pagamento. Status atual: {pedido.status.value}",
                 "details": [],
             },
         )
 
     pagamentoExistente = pagamento_repo.buscarPorPedido(db, pedidoId)
-    if pagamentoExistente:
+    if pagamentoExistente and pagamentoExistente.status == StatusPagamentoEnum.APROVADO:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail={
-                "error": "PAGAMENTO_JA_EXISTE",
-                "message": "Este pedido já possui um pagamento registrado.",
+                "error": "PAGAMENTO_JA_APROVADO",
+                "message": "Este pedido já possui um pagamento aprovado.",
                 "details": [],
             },
         )
@@ -77,4 +77,6 @@ def processar(
         },
         ipOrigem=ipOrigem,
     )
-    usuario_repo.re
+    usuario_repo.registrarLog(db, log)
+
+    return pagamento

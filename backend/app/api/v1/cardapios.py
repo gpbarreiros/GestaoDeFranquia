@@ -64,30 +64,6 @@ def atualizar(
 @router.get("/{cardapioId}/itens", response_model=list[CardapioItemResponse])
 def listarItens(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
     from app.domain.models.produto import Produto
-    itens = db.query(CardapioItem).filter(
-        CardapioItem.cardapioId == cardapioId
-    ).all()
-    
-    resultado = []
-    for item in itens:
-        produto = db.query(Produto).filter(Produto.id == item.produtoId).first()
-        itemDict = {
-            "id": item.id,
-            "cardapioId": item.cardapioId,
-            "produtoId": item.produtoId,
-            "disponivel": item.disponivel,
-            "nomeProduto": produto.nome if produto else None,
-            "descricaoProduto": produto.descricao if produto else None,
-            "precoProduto": produto.preco if produto else None,
-        }
-        resultado.append(itemDict)
-    
-    return resultado
-
-
-@router.get("/{cardapioId}/itens", response_model=list[CardapioItemResponse])
-def listarItens(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
-    from app.domain.models.produto import Produto
 
     cardapio = db.query(Cardapio).filter(Cardapio.id == cardapioId).first()
     if not cardapio:
@@ -122,7 +98,7 @@ def listarItens(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
     resultado = []
     for item in itens:
         produto = db.query(Produto).filter(Produto.id == item.produtoId).first()
-        itemDict = {
+        resultado.append({
             "id": item.id,
             "cardapioId": item.cardapioId,
             "produtoId": item.produtoId,
@@ -130,8 +106,7 @@ def listarItens(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
             "nomeProduto": produto.nome if produto else None,
             "descricaoProduto": produto.descricao if produto else None,
             "precoProduto": produto.preco if produto else None,
-        }
-        resultado.append(itemDict)
+        })
 
     return resultado
 
