@@ -6,6 +6,7 @@ from app.domain.models.usuario import LogAuditoria
 from app.domain.enums import StatusPagamentoEnum, StatusPedidoEnum
 from app.infrastructure.repositories import pagamento_repo, pedido_repo, usuario_repo
 from app.infrastructure.gateway.pagamento_mock import processarPagamento
+from app.application import fidelidade_service
 
 
 def processar(
@@ -31,7 +32,7 @@ def processar(
             status_code=status.HTTP_409_CONFLICT,
             detail={
                 "error": "PEDIDO_STATUS_INVALIDO",
-                "message": "Pedido não está aguardando pagamento. Status atual: {pedido.status.value}",
+                "message": f"Pedido não está aguardando pagamento. Status atual: {pedido.status.value}",
                 "details": [],
             },
         )
@@ -63,6 +64,7 @@ def processar(
     if resultado["aprovado"]:
         pedido.status = StatusPedidoEnum.PAGO
         pedido_repo.atualizar(db, pedido)
+        fidelidade_service.creditarPontos(db, pedido.clienteId, pedido.id, float(pedido.total))
 
     log = LogAuditoria(
         usuarioId=usuarioAtual.id,
