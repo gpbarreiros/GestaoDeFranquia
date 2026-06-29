@@ -1,18 +1,21 @@
 from datetime import datetime, timedelta, timezone
 from typing import Any
+import bcrypt
 from jose import JWTError, jwt
-from passlib.context import CryptContext
 from app.core.config import settings
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+SIZE_MAXIMO = 72
 
 
 def hashSenha(senha: str) -> str:
-    return pwd_context.hash(senha)
+    senhaBytes = senha.encode("utf-8")[:SIZE_MAXIMO]
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(senhaBytes, salt).decode("utf-8")
 
 
 def verificarSenha(senha: str, senhaHash: str) -> bool:
-    return pwd_context.verify(senha, senhaHash)
+    senhaBytes = senha.encode("utf-8")[:SIZE_MAXIMO]
+    return bcrypt.checkpw(senhaBytes, senhaHash.encode("utf-8"))
 
 
 def criarAccessToken(dados: dict[str, Any]) -> str:

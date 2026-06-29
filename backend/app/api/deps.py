@@ -1,19 +1,21 @@
 from typing import Annotated
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.orm import Session
 from app.infrastructure.database import get_db
 from app.core.security import decodificarToken
 from app.domain.models.usuario import Usuario
 from app.domain.enums import RoleEnum
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login")
+security = HTTPBearer()
 
 DbDep = Annotated[Session, Depends(get_db)]
-TokenDep = Annotated[str, Depends(oauth2_scheme)]
 
 
-def get_usuario_atual(token: TokenDep, db: DbDep) -> Usuario:
+def get_usuario_atual(
+    credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)],
+    db: DbDep,
+) -> Usuario:
     credenciais_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail={
@@ -22,7 +24,7 @@ def get_usuario_atual(token: TokenDep, db: DbDep) -> Usuario:
         },
         headers={"WWW-Authenticate": "Bearer"},
     )
-    payload = decodificarToken(token)
+    payload = decodificarToken(credentials.credentials)
     if payload is None:
         raise credenciais_exception
 
@@ -45,7 +47,11 @@ UsuarioAtualDep = Annotated[Usuario, Depends(get_usuario_atual)]
 
 
 def requer_role(*roles: RoleEnum):
-    def verificar(usuario: UsuarioAtualDep) -> Usuario:
+    def verificar(
+        credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)],
+        db: DbDep,
+    ) -> Usuario:
+        usuario = get_usuario_atual(credentials, db)
         if usuario.role not in roles:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,

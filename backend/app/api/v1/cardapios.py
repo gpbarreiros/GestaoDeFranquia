@@ -61,23 +61,79 @@ def atualizar(
     return cardapio
 
 
-@router.post("/{cardapioId}/itens", response_model=CardapioItemResponse, status_code=201)
-def adicionarItem(
-    cardapioId: uuid.UUID,
-    dados: CardapioItemCreate,
-    db: DbDep,
-    admin=requer_role(RoleEnum.ADMIN, RoleEnum.GERENTE),
-):
-    item = CardapioItem(cardapioId=cardapioId, **dados.model_dump())
-    db.add(item)
-    db.commit()
-    db.refresh(item)
-    return item
+@router.get("/{cardapioId}/itens", response_model=list[CardapioItemResponse])
+def listarItens(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
+    from app.domain.models.produto import Produto
+    itens = db.query(CardapioItem).filter(
+        CardapioItem.cardapioId == cardapioId
+    ).all()
+    
+    resultado = []
+    for item in itens:
+        produto = db.query(Produto).filter(Produto.id == item.produtoId).first()
+        itemDict = {
+            "id": item.id,
+            "cardapioId": item.cardapioId,
+            "produtoId": item.produtoId,
+            "disponivel": item.disponivel,
+            "nomeProduto": produto.nome if produto else None,
+            "descricaoProduto": produto.descricao if produto else None,
+            "precoProduto": produto.preco if produto else None,
+        }
+        resultado.append(itemDict)
+    
+    return resultado
 
 
 @router.get("/{cardapioId}/itens", response_model=list[CardapioItemResponse])
 def listarItens(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
-    return db.query(CardapioItem).filter(CardapioItem.cardapioId == cardapioId).all()
+    from app.domain.models.produto import Produto
+
+    cardapio = db.query(Cardapio).filter(Cardapio.id == cardapioId).first()
+    if not cardapio:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={
+                "error": "CARDAPIO_NAO_ENCONTRADO",
+                "message": "Cardápio não encontrado.",
+                "details": [],
+            },
+        )
+
+    if not cardapio.ativo:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail={
+                "error": "CARDAPIO_INATIVO",
+                "message": "Este cardápio está inativo e não pode ser consultado.",
+                "details": [
+                    {
+                        "field": "ativo",
+                        "issue": "Cardápio inativo",
+                    }
+                ],
+            },
+        )
+
+    itens = db.query(CardapioItem).filter(
+        CardapioItem.cardapioId == cardapioId
+    ).all()
+
+    resultado = []
+    for item in itens:
+        produto = db.query(Produto).filter(Produto.id == item.produtoId).first()
+        itemDict = {
+            "id": item.id,
+            "cardapioId": item.cardapioId,
+            "produtoId": item.produtoId,
+            "disponivel": item.disponivel,
+            "nomeProduto": produto.nome if produto else None,
+            "descricaoProduto": produto.descricao if produto else None,
+            "precoProduto": produto.preco if produto else None,
+        }
+        resultado.append(itemDict)
+
+    return resultado
 
 
 @router.post("/{cardapioId}/unidades", response_model=CardapioPorUnidadeResponse, status_code=201)
@@ -96,4 +152,24 @@ def vincularUnidade(
 
 @router.get("/{cardapioId}/unidades", response_model=list[CardapioPorUnidadeResponse])
 def listarUnidades(cardapioId: uuid.UUID, db: DbDep, _: UsuarioAtualDep):
-    return db.query(CardapioPorUnidade).filter(CardapioPorUnidade.cardapioId == cardapioId).all()
+    from app.domain.models.unidade import Unidade
+    vinculos = db.query(CardapioPorUnidade).filter(
+        CardapioPorUnidade.cardapioId == cardapioId
+    ).all()
+
+    resultado = []
+    for vinculo in vinculos:
+        cardapio = db.query(Cardapio).filter(Cardapio.id == vinculo.cardapioId).first()
+        unidade = db.query(Unidade).filter(Unidade.id == vinculo.unidadeId).first()
+        resultado.append({
+            "id": vinculo.id,
+            "cardapioId": vinculo.cardapioId,
+            "unidadeId": vinculo.unidadeId,
+            "ativo": vinculo.ativo,
+            "nomeCardapio": cardapio.nome if cardapio else None,
+            "periodoInicio": cardapio.periodoInicio if cardapio else None,
+            "periodoFim": cardapio.periodoFim if cardapio else None,
+            "nomeUnidade": unidade.nome if unidade else None,
+        })
+
+    return resultado

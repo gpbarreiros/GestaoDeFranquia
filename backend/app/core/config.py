@@ -1,44 +1,23 @@
 from pydantic_settings import BaseSettings
-from pydantic import field_validator
-from typing import Optional
+from pydantic import Field
 
 
 class Settings(BaseSettings):
-    # Aplicação
-    appNome: str = "Gestão de Franquias API"
-    appVersao: str = "1.0.0"
-    appEnv: str = "development"
-    debug: bool = True
+    appNome: str = Field("Gestao de Franquias API", alias="APP_NAME")
+    appVersao: str = Field("1.0.0", alias="APP_VERSION")
+    appEnv: str = Field("development", alias="APP_ENV")
+    debug: bool = Field(True, alias="DEBUG")
 
-    # Banco de dados
-    postgresHost: str = "localhost"
-    postgresPort: int = 5432
-    postgresDb: str = "gestao_franquias"
-    postgresUser: str = "postgres"
-    postgresPassword: str = "postgres"
-    databaseUrl: Optional[str] = None
+    databaseUrl: str = Field(
+        "postgresql://postgres:postgres@localhost:5432/gestao_franquias",
+        alias="DATABASE_URL"
+    )
 
-    @field_validator("databaseUrl", mode="before")
-    @classmethod
-    def montar_database_url(cls, v, info):
-        if v:
-            return v
-        dados = info.data
-        return (
-            f"postgresql://{dados.get('postgresUser')}"
-            f":{dados.get('postgresPassword')}"
-            f"@{dados.get('postgresHost')}"
-            f":{dados.get('postgresPort')}"
-            f"/{dados.get('postgresDb')}"
-        )
+    secretKey: str = Field("senhaProjeto123", alias="SECRET_KEY")
+    algorithm: str = Field("HS256", alias="ALGORITHM")
+    accessTokenExpireMinutes: int = Field(60, alias="ACCESS_TOKEN_EXPIRE_MINUTES")
 
-    # JWT
-    secretKey: str = "troque-esta-chave-em-producao"
-    algorithm: str = "HS256"
-    accessTokenExpireMinutes: int = 60
-
-    # Gateway mock
-    pagamentoMockTaxaAprovacao: float = 0.8
+    pagamentoMockTaxaAprovacao: float = Field(0.8, alias="PAGAMENTO_MOCK_TAXA_APROVACAO")
 
     model_config = {
         "env_file": ".env",
