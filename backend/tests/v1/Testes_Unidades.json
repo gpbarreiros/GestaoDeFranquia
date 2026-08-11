@@ -1,0 +1,616 @@
+{
+  "info": {
+    "_postman_id": "ff9add82-1d1a-4720-9f69-4c20f96154d0",
+    "name": "Unidades",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-ff9add82-1d1a-4720-9f69-4c20f96154d0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Criar Unidades",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Unidade João Pessoa\",\r\n  \"endereco\": \"Praça Miguel Luiz, n 544\",\r\n  \"cidade\": \"João Pessoa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "unidades"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \n\n\n\n'https://gestao-franquia-api.onrender.com/api/v1/unidades' \n\n\n\n-H 'accept: application/json' \n\n\n\n-H 'Authorization: {{Bearer}}\n\n\n\n-H 'Content-Type: application/json' \n\n\n\n-d '{\n\n\n\n\"nome\": \"string\",\n\n\n\n\"endereco\": \"string\",\n\n\n\n\"cidade\": \"string\"\n\n\n\n}'"
+      },
+      "response": [
+        {
+          "name": "Criar Unidades com Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Unidade Maceió\",\r\n  \"endereco\": \"Rua do meio, n 655\",\r\n  \"cidade\": \"Alagoas\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "unidades"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 04:44:34 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "146"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "16d9b804-dcf8-40c5"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c588cdb647254-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"7a27566c-9ff3-4275-a727-f8d426e38aa9\",\n    \"nome\": \"Unidade Maceió\",\n    \"endereco\": \"Rua do meio, n 655\",\n    \"cidade\": \"Alagoas\",\n    \"ativa\": true,\n    \"criadoEm\": \"2026-08-10T04:44:33.492030Z\"\n}"
+        },
+        {
+          "name": "Criar Unidades Validação usuário ADM",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Unidade João Pessoa\",\r\n  \"endereco\": \"Praça Miguel Luiz, n 544\",\r\n  \"cidade\": \"João Pessoa\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "unidades"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 403
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 04:58:12 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "93"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "03598ef8-70e5-482e"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c6c91ebe45e0f-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"SEM_PERMISSAO\",\n        \"message\": \"Acesso restrito. Perfil necessário: ['ADMIN']\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Listar Unidades",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades?skip=0&limit=10",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "unidades"
+          ],
+          "query": [
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/unidades?skip=0&limit=10' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}"
+      },
+      "response": [
+        {
+          "name": "Listar Unidades Com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": ""
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades?skip=0&limit=10",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "unidades"
+              ],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:38:44 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "250"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "d5caf836-4714-4e3d"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b485c6afe5e5b-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"32d37833-fe2d-40cc-9cc5-df65b50a72bb\",\n        \"nome\": \"Raízes Nordeste 1\",\n        \"endereco\": \"Rua Capitão Nóbrega, 145\",\n        \"cidade\": \"Recife\",\n        \"ativa\": true,\n        \"criadoEm\": \"2026-08-07T02:59:18.639696Z\"\n    },\n    {\n        \"id\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n        \"nome\": \"Fortaleza\",\n        \"endereco\": \"Estrada do Sabão, n 30\",\n        \"cidade\": \"Ceará\",\n        \"ativa\": true,\n        \"criadoEm\": \"2026-08-10T00:29:50.797343Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Obter Unidade por ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "unidades",
+            "82418626-78d8-4cf1-8c14-80b13b215bd4"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Atualizar Unidade",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}} \\"
+          },
+          {
+            "key": "",
+            "value": "",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Fortaleza\",\r\n  \"endereco\": \"Estrada do Sabão, n 30\",\r\n  \"cidade\": \"Ceará\",\r\n  \"ativa\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "unidades",
+            "82418626-78d8-4cf1-8c14-80b13b215bd4"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'PATCH' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}} \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"string\",\r\n  \"endereco\": \"string\",\r\n  \"cidade\": \"string\",\r\n  \"ativa\": true\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Atualização com Sucesso",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}} \\"
+              },
+              {
+                "key": "",
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Fortaleza\",\r\n  \"endereco\": \"Estrada do Sabão, n 30\",\r\n  \"cidade\": \"Ceará\",\r\n  \"ativa\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "unidades",
+                "82418626-78d8-4cf1-8c14-80b13b215bd4"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:13:48 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "144"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "94465766-ef3c-4af1"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b23d8adcaffa8-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"nome\": \"Fortaleza\",\n    \"endereco\": \"Estrada do Sabão, n 30\",\n    \"cidade\": \"Ceará\",\n    \"ativa\": true,\n    \"criadoEm\": \"2026-08-10T00:29:50.797343Z\"\n}"
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{Bearer}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

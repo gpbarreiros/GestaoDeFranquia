@@ -1,0 +1,1203 @@
+{
+  "info": {
+    "_postman_id": "9a68f773-bbcb-4169-8108-f7b90bf101b0",
+    "name": "Pedidos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-9a68f773-bbcb-4169-8108-f7b90bf101b0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Criar Pedido",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\r\n  \"canalPedido\": \"APP\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\r\n      \"quantidade\": 0\r\n    }\r\n  ],\r\n  \"observacao\": \"string\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pedidos"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/pedidos' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"unidadeId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"canalPedido\": \"APP\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n      \"quantidade\": 0\r\n    }\r\n  ],\r\n  \"observacao\": \"string\"\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Criar Pedido erro quantidade Zero",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"unidadeId\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\r\n  \"canalPedido\": \"APP\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\r\n      \"quantidade\": 0\r\n    }\r\n  ],\r\n  \"observacao\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 422
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:08:46 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "126"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "9b0ca2cf-1c13-44bc"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b74603fad593b-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": [\n        {\n            \"type\": \"value_error\",\n            \"loc\": [\n                \"body\",\n                \"itens\",\n                0,\n                \"quantidade\"\n            ],\n            \"msg\": \"Value error, Quantidade deve ser maior que zero\",\n            \"input\": 0,\n            \"ctx\": {\n                \"error\": {}\n            }\n        }\n    ]\n}"
+        },
+        {
+          "name": "Criar Pedido Estoque Insuficiente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"unidadeId\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\r\n  \"canalPedido\": \"TOTEM\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"8592b4d4-0f90-4654-ae30-b3d8ca855f81\",\r\n      \"quantidade\": 3\r\n    }\r\n  ],\r\n  \"observacao\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 409
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 04:30:43 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "190"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "ca65f7ce-026e-4d19"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c444c4863df22-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"ESTOQUE_INSUFICIENTE\",\n        \"message\": \"Estoque insuficiente para o produto Baião de Dois.\",\n        \"details\": [\n            {\n                \"field\": \"itens[produtoId=8592b4d4-0f90-4654-ae30-b3d8ca855f81].quantidade\",\n                \"issue\": \"Disponível: 0\"\n            }\n        ]\n    }\n}"
+        },
+        {
+          "name": "Criar Pedido com sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\r\n  \"canalPedido\": \"APP\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"observacao\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:11:17 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "342"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "e8a76332-2b1d-4779"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b78036b0affa8-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"f7bb358d-efc8-48ef-94b9-49f6e5014678\",\n    \"clienteId\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"canalPedido\": \"APP\",\n    \"status\": \"AGUARDANDO_PAGAMENTO\",\n    \"total\": \"240.00\",\n    \"observacao\": \"string\",\n    \"itens\": [\n        {\n            \"id\": \"6a6f2a9b-56da-4f5a-84a6-3b81ea26d445\",\n            \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n            \"quantidade\": 2,\n            \"precoUnitario\": \"120.00\",\n            \"subtotal\": \"240.00\"\n        }\n    ],\n    \"criadoEm\": \"2026-08-10T02:11:15.384480Z\",\n    \"atualizadoEm\": \"2026-08-10T02:11:15.384480Z\"\n}"
+        },
+        {
+          "name": "Criar Pedido Com sucesso Como Cliente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\r\n  \"canalPedido\": \"WEB\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\", \r\n      \"quantidade\": 6\r\n    },\r\n      {\r\n      \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"observacao\": \"Sem Pimenta\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 05:12:32 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "400"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "a8b8f376-9592-41d6"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c81842d12f1da-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"f3324ffc-f6ec-4af2-9799-41b4e8d7d198\",\n    \"clienteId\": \"1e3a5dd3-9bbf-48c0-b86b-5415976883eb\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"canalPedido\": \"WEB\",\n    \"status\": \"AGUARDANDO_PAGAMENTO\",\n    \"total\": \"1140.00\",\n    \"observacao\": \"Sem Pimenta\",\n    \"itens\": [\n        {\n            \"id\": \"243b8581-fd9d-4c5f-b94a-389cd0e419a5\",\n            \"produtoId\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n            \"quantidade\": 6,\n            \"precoUnitario\": \"150.00\",\n            \"subtotal\": \"900.00\"\n        },\n        {\n            \"id\": \"76f609b3-4328-4e0e-b095-155a5335b70b\",\n            \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n            \"quantidade\": 2,\n            \"precoUnitario\": \"120.00\",\n            \"subtotal\": \"240.00\"\n        }\n    ],\n    \"criadoEm\": \"2026-08-10T05:12:30.353438Z\",\n    \"atualizadoEm\": \"2026-08-10T05:12:30.353438Z\"\n}"
+        },
+        {
+          "name": "Criar Pedido Validação Canal",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"unidadeId\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\r\n  \"canalPedido\": \"\",\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\r\n      \"quantidade\": 0\r\n    }\r\n  ],\r\n  \"observacao\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 422
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 05:08:37 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "213"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "8ed4096f-ec1f-45b3"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c7bcfaf9ef1da-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": [\n        {\n            \"type\": \"enum\",\n            \"loc\": [\n                \"body\",\n                \"canalPedido\"\n            ],\n            \"msg\": \"Input should be 'APP', 'TOTEM', 'BALCAO', 'PICKUP' or 'WEB'\",\n            \"input\": \"\",\n            \"ctx\": {\n                \"expected\": \"'APP', 'TOTEM', 'BALCAO', 'PICKUP' or 'WEB'\"\n            }\n        },\n        {\n            \"type\": \"value_error\",\n            \"loc\": [\n                \"body\",\n                \"itens\",\n                0,\n                \"quantidade\"\n            ],\n            \"msg\": \"Value error, Quantidade deve ser maior que zero\",\n            \"input\": 0,\n            \"ctx\": {\n                \"error\": {}\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Obter Pedidos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos?skip=0&limit=10&status=AGUARDANDO_PAGAMENTO&canalPedido=APP&unidadeId=82418626-78d8-4cf1-8c14-80b13b215bd4",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pedidos"
+          ],
+          "query": [
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            },
+            {
+              "key": "status",
+              "value": "AGUARDANDO_PAGAMENTO"
+            },
+            {
+              "key": "canalPedido",
+              "value": "APP"
+            },
+            {
+              "key": "unidadeId",
+              "value": "82418626-78d8-4cf1-8c14-80b13b215bd4"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/pedidos?skip=0&limit=10&status=AGUARDANDO_PAGAMENTO&canalPedido=APP&unidadeId=82418626-78d8-4cf1-8c14-80b13b215bd4' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter Pedidos com sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos?skip=0&limit=10&status=AGUARDANDO_PAGAMENTO&canalPedido=APP&unidadeId=82418626-78d8-4cf1-8c14-80b13b215bd4",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos"
+              ],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "status",
+                  "value": "AGUARDANDO_PAGAMENTO"
+                },
+                {
+                  "key": "canalPedido",
+                  "value": "APP"
+                },
+                {
+                  "key": "unidadeId",
+                  "value": "82418626-78d8-4cf1-8c14-80b13b215bd4"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:15:29 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "344"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "e46d0bad-7362-4f69"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b7e32d8822496-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"f7bb358d-efc8-48ef-94b9-49f6e5014678\",\n        \"clienteId\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n        \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n        \"canalPedido\": \"APP\",\n        \"status\": \"AGUARDANDO_PAGAMENTO\",\n        \"total\": \"240.00\",\n        \"observacao\": \"string\",\n        \"itens\": [\n            {\n                \"id\": \"6a6f2a9b-56da-4f5a-84a6-3b81ea26d445\",\n                \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n                \"quantidade\": 2,\n                \"precoUnitario\": \"120.00\",\n                \"subtotal\": \"240.00\"\n            }\n        ],\n        \"criadoEm\": \"2026-08-10T02:11:15.384480Z\",\n        \"atualizadoEm\": \"2026-08-10T02:11:15.384480Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Obter Pedido por ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pedidos",
+            "f7bb358d-efc8-48ef-94b9-49f6e5014678"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter Pedido por ID Com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos",
+                "f7bb358d-efc8-48ef-94b9-49f6e5014678"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:19:52 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "342"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "c91c71b6-c625-436f"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b84a31f08b5a4-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"f7bb358d-efc8-48ef-94b9-49f6e5014678\",\n    \"clienteId\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"canalPedido\": \"APP\",\n    \"status\": \"AGUARDANDO_PAGAMENTO\",\n    \"total\": \"240.00\",\n    \"observacao\": \"string\",\n    \"itens\": [\n        {\n            \"id\": \"6a6f2a9b-56da-4f5a-84a6-3b81ea26d445\",\n            \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n            \"quantidade\": 2,\n            \"precoUnitario\": \"120.00\",\n            \"subtotal\": \"240.00\"\n        }\n    ],\n    \"criadoEm\": \"2026-08-10T02:11:15.384480Z\",\n    \"atualizadoEm\": \"2026-08-10T02:11:15.384480Z\"\n}"
+        },
+        {
+          "name": "Obter Pedido por ID com Sucesso no Pagamento",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos",
+                "f7bb358d-efc8-48ef-94b9-49f6e5014678"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:27:04 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "321"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "72c32982-ba2e-4d6a"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b8f2b29b8920d-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"f7bb358d-efc8-48ef-94b9-49f6e5014678\",\n    \"clienteId\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"canalPedido\": \"APP\",\n    \"status\": \"PAGO\",\n    \"total\": \"240.00\",\n    \"observacao\": \"string\",\n    \"itens\": [\n        {\n            \"id\": \"6a6f2a9b-56da-4f5a-84a6-3b81ea26d445\",\n            \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n            \"quantidade\": 2,\n            \"precoUnitario\": \"120.00\",\n            \"subtotal\": \"240.00\"\n        }\n    ],\n    \"criadoEm\": \"2026-08-10T02:11:15.384480Z\",\n    \"atualizadoEm\": \"2026-08-10T02:26:44.414799Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Atualizar Status do Pedido",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"EM_PREPARO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678/status",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pedidos",
+            "f7bb358d-efc8-48ef-94b9-49f6e5014678",
+            "status"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'PATCH' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678/status' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"status\": \"AGUARDANDO_PAGAMENTO\"\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Atualizar Status do Pedido Validação Status iguais",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"AGUARDANDO_PAGAMENTO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678/status",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos",
+                "f7bb358d-efc8-48ef-94b9-49f6e5014678",
+                "status"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 409
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:23:44 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "185"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "3ae227e9-b4a2-4c69"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b8a49c96f29e2-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"TRANSICAO_STATUS_INVALIDA\",\n        \"message\": \"Não é possível mudar de AGUARDANDO_PAGAMENTO para AGUARDANDO_PAGAMENTO.\",\n        \"details\": [\n            {\n                \"field\": \"status\",\n                \"issue\": \"Transições permitidas: ['PAGO', 'CANCELADO']\"\n            }\n        ]\n    }\n}"
+        },
+        {
+          "name": "Atualizar Status do Pedido com Sucesso após pagamento",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"EM_PREPARO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pedidos/f7bb358d-efc8-48ef-94b9-49f6e5014678/status",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pedidos",
+                "f7bb358d-efc8-48ef-94b9-49f6e5014678",
+                "status"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:28:44 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "327"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "d39492a9-fa0e-4d13"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b919289d99097-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"f7bb358d-efc8-48ef-94b9-49f6e5014678\",\n    \"clienteId\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"canalPedido\": \"APP\",\n    \"status\": \"EM_PREPARO\",\n    \"total\": \"240.00\",\n    \"observacao\": \"string\",\n    \"itens\": [\n        {\n            \"id\": \"6a6f2a9b-56da-4f5a-84a6-3b81ea26d445\",\n            \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n            \"quantidade\": 2,\n            \"precoUnitario\": \"120.00\",\n            \"subtotal\": \"240.00\"\n        }\n    ],\n    \"criadoEm\": \"2026-08-10T02:11:15.384480Z\",\n    \"atualizadoEm\": \"2026-08-10T02:28:42.700984Z\"\n}"
+        }
+      ]
+    }
+  ]
+}

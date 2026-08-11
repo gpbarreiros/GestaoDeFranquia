@@ -1,0 +1,299 @@
+{
+  "info": {
+    "_postman_id": "a9d64fb5-222a-4136-9849-3d076d4a219c",
+    "name": "Estoque",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-a9d64fb5-222a-4136-9849-3d076d4a219c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Movimentar Estoque",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\r\n  \"produtoId\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\r\n  \"tipo\": \"ENTRADA\",\r\n  \"quantidade\": 200,\r\n  \"motivo\": \"Estoque segunda quinzena de agosto\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/estoque/movimentacoes",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estoque",
+            "movimentacoes"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/estoque/movimentacoes' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"unidadeId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"produtoId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"tipo\": \"ENTRADA\",\r\n  \"quantidade\": 0,\r\n  \"motivo\": \"string\"\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Movimentar Estoque com Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\r\n  \"produtoId\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\r\n  \"tipo\": \"ENTRADA\",\r\n  \"quantidade\": 1000,\r\n  \"motivo\": \"Estoque segunda quinzena de agosto\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/estoque/movimentacoes",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "estoque",
+                "movimentacoes"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:49:02 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "158"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "4547af15-d4ea-4482"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b5764ea69c50d-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e5da4f1e-b2a3-4d62-b3fe-972b6b42ac3a\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"produtoId\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n    \"quantidade\": 1000,\n    \"atualizadoEm\": \"2026-08-10T01:49:01.091500Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Obter Produtos por Unidade",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/estoque/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "estoque",
+            "unidades",
+            "82418626-78d8-4cf1-8c14-80b13b215bd4"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/estoque/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter produtos por Unidade com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/estoque/unidades/82418626-78d8-4cf1-8c14-80b13b215bd4",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "estoque",
+                "unidades",
+                "82418626-78d8-4cf1-8c14-80b13b215bd4"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:05:36 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "227"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "ceb00733-a454-4d59"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b6fb9ae389872-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"e5da4f1e-b2a3-4d62-b3fe-972b6b42ac3a\",\n        \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n        \"produtoId\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n        \"quantidade\": 2000,\n        \"atualizadoEm\": \"2026-08-10T01:59:32.901412Z\"\n    },\n    {\n        \"id\": \"b918964f-f925-4994-8c72-ca14160ae164\",\n        \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n        \"produtoId\": \"fee3ee25-5aff-4011-afda-fac99d719976\",\n        \"quantidade\": 500,\n        \"atualizadoEm\": \"2026-08-10T02:05:10.570019Z\"\n    }\n]"
+        }
+      ]
+    }
+  ]
+}

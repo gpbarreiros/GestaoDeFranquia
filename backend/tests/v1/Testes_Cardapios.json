@@ -1,0 +1,947 @@
+{
+  "info": {
+    "_postman_id": "b92ef463-6f8f-426a-8abf-a5405da6b9b8",
+    "name": "Cardápios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-b92ef463-6f8f-426a-8abf-a5405da6b9b8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Criar Cardápio",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"descricao\": \"Cardápio principal da rede João Pessoa\",\r\n  \"nome\": \"Cardápio Dia a Dia\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"descricao\": \"Cardápio principal da rede\",\r\n  \"nome\": \"Cardápio Padrão\"\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Criar Cardápio com Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"descricao\": \"Cardápio principal da rede Fortaleza\",\r\n  \"nome\": \"Cardápio Dia a Dia\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cardapios"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:26:28 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "172"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "78fe3390-b95c-4b8a"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b3662493fffa8-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\n    \"nome\": \"Cardápio Dia a Dia\",\n    \"descricao\": \"Cardápio principal da rede Fortaleza\",\n    \"periodoInicio\": null,\n    \"periodoFim\": null,\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T01:26:27.558596Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Listar Cardápios",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios?skip=0&limit=10",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios"
+          ],
+          "query": [
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios?skip=0&limit=10' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Listar Cardápios Com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios?skip=0&limit=10",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cardapios"
+              ],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:28:44 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "175"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "9cfe0ed0-1b67-4994"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b39b7cdb48bf6-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\n        \"nome\": \"Cardápio Dia a Dia\",\n        \"descricao\": \"Cardápio principal da rede Fortaleza\",\n        \"periodoInicio\": null,\n        \"periodoFim\": null,\n        \"ativo\": true,\n        \"criadoEm\": \"2026-08-10T01:26:27.558596Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Obter Cardápio por ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios",
+            "e3a1c97f-8264-4e41-b909-548d47a0abea"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter Cardápio por ID com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cardapios",
+                "e3a1c97f-8264-4e41-b909-548d47a0abea"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:30:56 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "172"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "878053c2-e5a7-4218"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b3cf2b981c700-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\n    \"nome\": \"Cardápio Dia a Dia\",\n    \"descricao\": \"Cardápio principal da rede Fortaleza\",\n    \"periodoInicio\": null,\n    \"periodoFim\": null,\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T01:26:27.558596Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Atualizar Cardápio",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"periodoInicio\": \"2026-08-10\",\r\n  \"periodoFim\": \"2026-12-30\",\r\n  \"ativo\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios",
+            "e3a1c97f-8264-4e41-b909-548d47a0abea"
+          ]
+        },
+        "description": "Generated from cURL: \r\ncurl -X 'PATCH' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"string\",\r\n  \"descricao\": \"string\",\r\n  \"periodoInicio\": \"2026-08-10\",\r\n  \"periodoFim\": \"2026-08-10\",\r\n  \"ativo\": true\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Atualizar Cardápio com Sucesso",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"periodoInicio\": \"2026-08-10\",\r\n  \"periodoFim\": \"2026-12-30\",\r\n  \"ativo\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cardapios",
+                "e3a1c97f-8264-4e41-b909-548d47a0abea"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:33:13 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "175"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "f0375850-f784-41e9"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b40446f91adc0-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\n    \"nome\": \"Cardápio Dia a Dia\",\n    \"descricao\": \"Cardápio principal da rede Fortaleza\",\n    \"periodoInicio\": \"2026-08-10\",\n    \"periodoFim\": \"2026-12-30\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T01:26:27.558596Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Obter Produtos do Cardápio",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/itens",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios",
+            "e3a1c97f-8264-4e41-b909-548d47a0abea",
+            "itens"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/itens' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": []
+    },
+    {
+      "name": "Cadastra Cardápio na Unidade",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ativo\": true,\r\n  \"unidadeId\": \"7a27566c-9ff3-4275-a727-f8d426e38aa9\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/unidades",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios",
+            "e3a1c97f-8264-4e41-b909-548d47a0abea",
+            "unidades"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/unidades' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"ativo\": true,\r\n  \"unidadeId\": \"uuid-da-unidade\"\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Cadastra Cardápio na Unidade com Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ativo\": true,\r\n  \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/unidades",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cardapios",
+                "e3a1c97f-8264-4e41-b909-548d47a0abea",
+                "unidades"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:39:23 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "181"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "8ddad4f9-1d0b-49b6"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b49537bcb5e5b-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0f35af9b-ef0e-4d98-af43-55a57f0be831\",\n    \"cardapioId\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\n    \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n    \"ativo\": true,\n    \"nomeCardapio\": null,\n    \"periodoInicio\": null,\n    \"periodoFim\": null,\n    \"nomeUnidade\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "Obter Unidade por Cardápio ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/unidades",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "cardapios",
+            "e3a1c97f-8264-4e41-b909-548d47a0abea",
+            "unidades"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/unidades' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter Unidade por Cardápio ID Com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/cardapios/e3a1c97f-8264-4e41-b909-548d47a0abea/unidades",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "cardapios",
+                "e3a1c97f-8264-4e41-b909-548d47a0abea",
+                "unidades"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:42:18 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "209"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "62ac8938-d189-415b"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b4d966f3eff14-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"0f35af9b-ef0e-4d98-af43-55a57f0be831\",\n        \"cardapioId\": \"e3a1c97f-8264-4e41-b909-548d47a0abea\",\n        \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n        \"ativo\": true,\n        \"nomeCardapio\": \"Cardápio Dia a Dia\",\n        \"periodoInicio\": \"2026-08-10\",\n        \"periodoFim\": \"2026-12-30\",\n        \"nomeUnidade\": \"Fortaleza\"\n    }\n]"
+        }
+      ]
+    }
+  ]
+}

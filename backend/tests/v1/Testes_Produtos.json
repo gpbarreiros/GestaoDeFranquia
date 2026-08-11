@@ -1,0 +1,697 @@
+{
+  "info": {
+    "_postman_id": "e36e59ce-b10c-421e-9c8c-4af757a63475",
+    "name": "Produtos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-e36e59ce-b10c-421e-9c8c-4af757a63475?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Criar Produtos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Porção de Batata Frita\",\r\n  \"descricao\": \"Porção de Batata Frita\",\r\n  \"preco\": 40.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "produtos"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/produtos' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}} ' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"Bobó de Camarão\",\r\n  \"descricao\": \"Prato feito com bobó de camarão\",\r\n  \"preco\": 100,00\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Criar Produtos com Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Bobó de Camarão Apimentado\",\r\n  \"descricao\": \"Prato feito com bobó de camarão\",\r\n  \"preco\": 100.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "produtos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:17:58 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "169"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "f79d593c-2f71-4b9a"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b29efecaa0118-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n    \"nome\": \"Bobó de Camarão Apimentado\",\n    \"descricao\": \"Prato feito com bobó de camarão\",\n    \"preco\": \"100.00\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T01:17:57.374958Z\"\n}"
+        },
+        {
+          "name": "Criar Produtos acesso negado para cliente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Porção de Batata Frita\",\r\n  \"descricao\": \"Porção de Batata Frita\",\r\n  \"preco\": 40.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "produtos"
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 403
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 04:55:30 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "102"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "047faae3-9389-4d45"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c689c6e3ea502-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"SEM_PERMISSAO\",\n        \"message\": \"Acesso restrito. Perfil necessário: ['ADMIN', 'GERENTE']\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Listar Produtos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos?skip=0&limit=10",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "produtos"
+          ],
+          "query": [
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/produtos?skip=0&limit=10' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Listar Produtos com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos?skip=0&limit=10",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "produtos"
+              ],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:19:49 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "172"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "005ffca6-86d5-4452"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b2cabfae62684-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n        \"nome\": \"Bobó de Camarão Apimentado\",\n        \"descricao\": \"Prato feito com bobó de camarão\",\n        \"preco\": \"100.00\",\n        \"ativo\": true,\n        \"criadoEm\": \"2026-08-10T01:17:57.374958Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Obter Produto por ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos/7783abfb-fb78-47c0-9897-a6b7436b7174",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "produtos",
+            "7783abfb-fb78-47c0-9897-a6b7436b7174"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/produtos/7783abfb-fb78-47c0-9897-a6b7436b7174' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter Produto por ID com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos/7783abfb-fb78-47c0-9897-a6b7436b7174",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "produtos",
+                "7783abfb-fb78-47c0-9897-a6b7436b7174"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:21:53 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "169"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "94784dcc-419f-4a96"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b2fb14dc01cf1-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n    \"nome\": \"Bobó de Camarão Apimentado\",\n    \"descricao\": \"Prato feito com bobó de camarão\",\n    \"preco\": \"100.00\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T01:17:57.374958Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Atualizar Produto",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\r\n    \"nome\": \"Bobó de Camarão Apimentado\",\r\n    \"descricao\": \"Prato feito com bobó de camarão\",\r\n    \"preco\": \"150.00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos/7783abfb-fb78-47c0-9897-a6b7436b7174",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "produtos",
+            "7783abfb-fb78-47c0-9897-a6b7436b7174"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'PATCH' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/produtos/7783abfb-fb78-47c0-9897-a6b7436b7174' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"string\",\r\n  \"descricao\": \"string\",\r\n  \"preco\": 0,\r\n  \"ativo\": true\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Atualizar Produto com Sucesso",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\r\n    \"nome\": \"Bobó de Camarão Apimentado\",\r\n    \"descricao\": \"Prato feito com bobó de camarão\",\r\n    \"preco\": \"150.00\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/produtos/7783abfb-fb78-47c0-9897-a6b7436b7174",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "produtos",
+                "7783abfb-fb78-47c0-9897-a6b7436b7174"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 01:24:26 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "169"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "69cad083-8614-49f4"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b336dcd278046-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"7783abfb-fb78-47c0-9897-a6b7436b7174\",\n    \"nome\": \"Bobó de Camarão Apimentado\",\n    \"descricao\": \"Prato feito com bobó de camarão\",\n    \"preco\": \"150.00\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T01:17:57.374958Z\"\n}"
+        }
+      ]
+    }
+  ]
+}

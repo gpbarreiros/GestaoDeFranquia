@@ -1,0 +1,302 @@
+{
+  "info": {
+    "_postman_id": "dd6c6857-4a88-48dd-9f53-af1bf9171cb3",
+    "name": "Auditoria",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-dd6c6857-4a88-48dd-9f53-af1bf9171cb3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Obter Auditoria",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/auditoria?entidade=pedido&acao=CRIAR_PEDIDO&dataInicio=2026-02-10&dataFim=2026-08-11&skip=0&limit=50",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auditoria"
+          ],
+          "query": [
+            {
+              "key": "entidade",
+              "value": "pedido"
+            },
+            {
+              "key": "acao",
+              "value": "CRIAR_PEDIDO"
+            },
+            {
+              "key": "dataInicio",
+              "value": "2026-02-10"
+            },
+            {
+              "key": "dataFim",
+              "value": "2026-08-11"
+            },
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "50"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/auditoria?entidade=d3cf9356-2902-4896-8027-b4bf32e23e32&acao=CRIAR_PEDIDO&dataInicio=01%2F08%2F2026&dataFim=09%2F09%2F2026&skip=0&limit=50' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}'"
+      },
+      "response": [
+        {
+          "name": "Obter Auditoria com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/auditoria?entidade=pedido&acao=CRIAR_PEDIDO&dataInicio=2026-02-10&dataFim=2026-08-11&skip=0&limit=50",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auditoria"
+              ],
+              "query": [
+                {
+                  "key": "entidade",
+                  "value": "pedido"
+                },
+                {
+                  "key": "acao",
+                  "value": "CRIAR_PEDIDO"
+                },
+                {
+                  "key": "dataInicio",
+                  "value": "2026-02-10"
+                },
+                {
+                  "key": "dataFim",
+                  "value": "2026-08-11"
+                },
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "50"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 02:49:08 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "267"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "4d219445-d693-48c5"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28baf7e4c9801c2-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"b1e2490c-928a-4f3a-b3f8-f80e1ce9095d\",\n        \"usuarioId\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n        \"acao\": \"CRIAR_PEDIDO\",\n        \"entidade\": \"pedido\",\n        \"entidadeId\": \"f7bb358d-efc8-48ef-94b9-49f6e5014678\",\n        \"detalhe\": {\n            \"itens\": 1,\n            \"total\": 240,\n            \"unidadeId\": \"82418626-78d8-4cf1-8c14-80b13b215bd4\",\n            \"canalPedido\": \"APP\"\n        },\n        \"ipOrigem\": \"10.26.174.7\",\n        \"criadoEm\": \"2026-08-10T02:11:16.274910Z\"\n    }\n]"
+        },
+        {
+          "name": "Obter Auditoria com Perfil Sem permissão",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/auditoria?entidade=pedido&acao=CRIAR_PEDIDO&dataInicio=2026-02-10&dataFim=2026-08-11&skip=0&limit=50",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auditoria"
+              ],
+              "query": [
+                {
+                  "key": "entidade",
+                  "value": "pedido"
+                },
+                {
+                  "key": "acao",
+                  "value": "CRIAR_PEDIDO"
+                },
+                {
+                  "key": "dataInicio",
+                  "value": "2026-02-10"
+                },
+                {
+                  "key": "dataFim",
+                  "value": "2026-08-11"
+                },
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "50"
+                }
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 403
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 05:36:29 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "93"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "4aa0ebd1-1427-41ba"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28ca49e3f095573-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"SEM_PERMISSAO\",\n        \"message\": \"Acesso restrito. Perfil necessário: ['ADMIN']\"\n    }\n}"
+        }
+      ]
+    }
+  ]
+}

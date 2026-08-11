@@ -1,0 +1,263 @@
+{
+  "info": {
+    "_postman_id": "c27e4aed-35f9-407b-93f5-dc0965e3e30c",
+    "name": "Pagamentos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-c27e4aed-35f9-407b-93f5-dc0965e3e30c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Pagamentos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Bearer}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"pedidoId\": \"f3324ffc-f6ec-4af2-9799-41b4e8d7d198\",\r\n  \"forma\": \"MOCK\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/pagamentos",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pagamentos"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/pagamentos' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Authorization: {{Bearer}}' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"pedidoId\": f7bb358d-efc8-48ef-94b9-49f6e5014678\",\r\n  \"forma\": \"MOCK\"\r\n}' "
+      },
+      "response": [
+        {
+          "name": "Pagamentos com sucesso -Cliente",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"pedidoId\": \"f3324ffc-f6ec-4af2-9799-41b4e8d7d198\",\r\n  \"forma\": \"MOCK\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pagamentos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 05:17:18 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "313"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "c1386df5-0135-442d"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c887e9e6cb6e6-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"5b9f48c9-7ec3-435c-807b-00c2b9f1eba8\",\n    \"pedidoId\": \"f3324ffc-f6ec-4af2-9799-41b4e8d7d198\",\n    \"forma\": \"MOCK\",\n    \"status\": \"APROVADO\",\n    \"valor\": \"1140.00\",\n    \"gatewayId\": \"40c5cdc4-ee5c-4d95-973a-17eccfc43955\",\n    \"gatewayPayload\": {\n        \"forma\": \"MOCK\",\n        \"valor\": 1140,\n        \"status\": \"APROVADO\",\n        \"aprovado\": true,\n        \"mensagem\": \"Pagamento aprovado com sucesso.\",\n        \"pedidoId\": \"f3324ffc-f6ec-4af2-9799-41b4e8d7d198\",\n        \"gatewayId\": \"40c5cdc4-ee5c-4d95-973a-17eccfc43955\",\n        \"processadoEm\": \"2026-08-10T05:17:18.262832+00:00\",\n        \"codigoAutorizacao\": \"A43D9BEF\"\n    },\n    \"processadoEm\": \"2026-08-10T05:17:18.262858Z\",\n    \"criadoEm\": \"2026-08-10T05:17:16.180564Z\"\n}"
+        },
+        {
+          "name": "Pagamentos Validação pagamento já efetuado",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{Bearer}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"pedidoId\": \"f3324ffc-f6ec-4af2-9799-41b4e8d7d198\",\r\n  \"forma\": \"MOCK\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/pagamentos",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 409
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 05:20:42 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "116"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "6a9dbf5d-dbfc-4c52"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c8d877bc9c02a-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"PEDIDO_STATUS_INVALIDO\",\n        \"message\": \"Pedido não está aguardando pagamento. Status atual: PAGO\",\n        \"details\": []\n    }\n}"
+        }
+      ]
+    }
+  ]
+}

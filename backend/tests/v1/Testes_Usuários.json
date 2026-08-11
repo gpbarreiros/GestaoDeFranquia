@@ -1,0 +1,1057 @@
+{
+  "info": {
+    "_postman_id": "1c93df81-b9a3-4762-9608-3858894a04a4",
+    "name": "Usuários",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56236966",
+    "_collection_link": "https://go.postman.co/collection/56236966-1c93df81-b9a3-4762-9608-3858894a04a4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Criar Usuários",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Luiz Farias\",\r\n  \"email\": \"farias@email.com\",\r\n  \"senha\": \"senh6\",\r\n  \"role\": \"GERENTE\",\r\n  \"baseLegalTratamento\": \"CONTRATO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'POST' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/usuarios' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"nome\": \"string\",\r\n  \"email\": \"user@example.com\",\r\n  \"senha\": \"string\",\r\n  \"role\": \"ADMIN\",\r\n  \"baseLegalTratamento\": \"CONSENTIMENTO\"\r\n}'"
+      },
+      "response": [
+        {
+          "name": "Criar Usuários Cliente com Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"João da Silva\",\r\n  \"email\": \"joão@email.com\",\r\n  \"senha\": \"senhaForte123\",\r\n  \"role\": \"CLIENTE\",\r\n  \"baseLegalTratamento\": \"CONSENTIMENTO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 201
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 03:06:47 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "145"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "14e53f6e-43d5-41bc"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28bc9433d58f38c-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"5ae50bc1-4f97-4d37-b65d-7789e51cbf8b\",\n    \"nome\": \"João da Silva\",\n    \"email\": \"joão@email.com\",\n    \"role\": \"CLIENTE\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-10T03:06:44.417299Z\"\n}"
+        },
+        {
+          "name": "Criar Usuários Validação usuários já cadastrado",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Luana Gomes\",\r\n  \"email\": \"luana@email.com\",\r\n  \"senha\": \"senhaSeper456\",\r\n  \"role\": \"CLIENTE\",\r\n  \"baseLegalTratamento\": \"CONSENTIMENTO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "status": "Conflict",
+          "code": 409,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 409
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 03:51:08 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "134"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "b8d66ca9-c523-4c6a"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c0a517e09d8a2-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"EMAIL_JA_CADASTRADO\",\n        \"message\": \"Já existe um usuário com este e-mail.\",\n        \"details\": [\n            {\n                \"field\": \"email\",\n                \"issue\": \"email já cadastrado\"\n            }\n        ]\n    }\n}"
+        },
+        {
+          "name": "Criar Usuários Validação BaseLegal",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Rafael Pereira\",\r\n  \"email\": \"rafael@email.com\",\r\n  \"senha\": \"senhaMuitoBoa456\",\r\n  \"role\": \"GERENTE\",\r\n  \"baseLegalTratamento\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 422
+            },
+            {
+              "key": "date",
+              "value": "Tue, 11 Aug 2026 00:14:56 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "160"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "a9f7f23e-e1bf-4994"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a2930a900f1a86c5-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": [\n        {\n            \"type\": \"value_error\",\n            \"loc\": [\n                \"body\",\n                \"baseLegalTratamento\"\n            ],\n            \"msg\": \"Value error, A base legal de tratamento é obrigatória. CONTRATO ou CONSENTIMENTO.\",\n            \"input\": \"\",\n            \"ctx\": {\n                \"error\": {}\n            }\n        }\n    ]\n}"
+        },
+        {
+          "name": "Criar Usuários Validação senha",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Luiz Farias\",\r\n  \"email\": \"farias@email.com\",\r\n  \"senha\": \"senh6\",\r\n  \"role\": \"GERENTE\",\r\n  \"baseLegalTratamento\": \"CONTRATO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 422
+            },
+            {
+              "key": "date",
+              "value": "Tue, 11 Aug 2026 00:16:38 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "145"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "ee7f033a-da57-4c79"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a2930d808802af6e-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": [\n        {\n            \"type\": \"value_error\",\n            \"loc\": [\n                \"body\",\n                \"senha\"\n            ],\n            \"msg\": \"Value error, A senha é obrigatória e deve ter pelo menos 8 caracteres.\",\n            \"input\": \"senh6\",\n            \"ctx\": {\n                \"error\": {}\n            }\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Listar Usuários",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios?skip=0&limit=10",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ],
+          "query": [
+            {
+              "key": "skip",
+              "value": "0"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/usuarios?skip=0&limit=10' \\\r\n  -H 'accept: application/json'"
+      },
+      "response": [
+        {
+          "name": "Listar Usuários Com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url_render}}/usuarios?skip=0&limit=10",
+              "host": [
+                "{{base_url_render}}"
+              ],
+              "path": [
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 03:07:58 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "379"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "73e9f54e-f776-4ca7"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28bcb186cf7f38c-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n        \"nome\": \"Avaliador Adm\",\n        \"email\": \"avaliador@gestaofranquia.com.br\",\n        \"role\": \"ADMIN\",\n        \"ativo\": true,\n        \"criadoEm\": \"2026-06-29T21:11:12.783663Z\"\n    },\n    {\n        \"id\": \"688c4bca-1b22-4eea-a8dd-16ed3fa66427\",\n        \"nome\": \"string\",\n        \"email\": \"user@example.com\",\n        \"role\": \"ADMIN\",\n        \"ativo\": false,\n        \"criadoEm\": \"2026-08-10T00:14:42.796441Z\"\n    },\n    {\n        \"id\": \"3d408e71-259f-4172-84cf-935beed5340b\",\n        \"nome\": \"Gabriella Barreiros\",\n        \"email\": \"gabriella@adm.com\",\n        \"role\": \"ADMIN\",\n        \"ativo\": true,\n        \"criadoEm\": \"2026-08-07T02:51:52.433982Z\"\n    },\n    {\n        \"id\": \"5ae50bc1-4f97-4d37-b65d-7789e51cbf8b\",\n        \"nome\": \"João da Silva\",\n        \"email\": \"joão@email.com\",\n        \"role\": \"CLIENTE\",\n        \"ativo\": true,\n        \"criadoEm\": \"2026-08-10T03:06:44.417299Z\"\n    }\n]"
+        },
+        {
+          "name": "Listar Usuários Restrito ao ADM",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios?skip=0&limit=10",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios"
+              ],
+              "query": [
+                {
+                  "key": "skip",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 403
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 04:52:55 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "93"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "7627bac1-c8a0-4423"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28c64cedc09d833-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": {\n        \"error\": \"SEM_PERMISSAO\",\n        \"message\": \"Acesso restrito. Perfil necessário: ['ADMIN']\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Obter dados do Usuário Logado",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios/me",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "me"
+          ]
+        },
+        "description": "Generated from cURL: curl -X 'GET' \\\r\n  'https://gestao-franquia-api.onrender.com/api/v1/usuarios/me' \\\r\n  -H 'accept: application/json'"
+      },
+      "response": [
+        {
+          "name": "Obter dados do Usuário Logado com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios/me",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "me"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 03:08:51 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "150"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "21d0a823-5269-4ad4"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28bcc60fe75f38c-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"d3cf9356-2902-4896-8027-b4bf32e23e32\",\n    \"nome\": \"Avaliador Adm\",\n    \"email\": \"avaliador@gestaofranquia.com.br\",\n    \"role\": \"ADMIN\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-06-29T21:11:12.783663Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Obter Usuário por ID",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios/3d408e71-259f-4172-84cf-935beed5340b",
+          "protocol": "https",
+          "host": [
+            "gestao-franquia-api",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "3d408e71-259f-4172-84cf-935beed5340b"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Obter Usuário por ID com Sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://gestao-franquia-api.onrender.com/api/v1/usuarios/3d408e71-259f-4172-84cf-935beed5340b",
+              "protocol": "https",
+              "host": [
+                "gestao-franquia-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "usuarios",
+                "3d408e71-259f-4172-84cf-935beed5340b"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 03:09:14 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "143"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "e1f6f40c-60c6-4cf7"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28bccf02e03f38c-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"3d408e71-259f-4172-84cf-935beed5340b\",\n    \"nome\": \"Gabriella Barreiros\",\n    \"email\": \"gabriella@adm.com\",\n    \"role\": \"ADMIN\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-07T02:51:52.433982Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Atualizar Usuário",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{Bearer}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Gabriella Barreiros\",\r\n  \"ativo\": true\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url_render}}/usuarios/3d408e71-259f-4172-84cf-935beed5340b",
+          "host": [
+            "{{base_url_render}}"
+          ],
+          "path": [
+            "usuarios",
+            "3d408e71-259f-4172-84cf-935beed5340b"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": "{usuarioId}",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Atualizar Usuário com Sucesso",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"Gabriella Barreiros\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url_render}}/usuarios/3d408e71-259f-4172-84cf-935beed5340b",
+              "host": [
+                "{{base_url_render}}"
+              ],
+              "path": [
+                "usuarios",
+                "3d408e71-259f-4172-84cf-935beed5340b"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": "{usuarioId}",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": ":status",
+              "value": 200
+            },
+            {
+              "key": "date",
+              "value": "Mon, 10 Aug 2026 00:58:57 GMT"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "143"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "rndr-id",
+              "value": "d20801d1-6c95-4ce4"
+            },
+            {
+              "key": "server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "x-render-origin-server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "cf-ray",
+              "value": "a28b0e13ce94181d-GRU"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"3d408e71-259f-4172-84cf-935beed5340b\",\n    \"nome\": \"Gabriella Barreiros\",\n    \"email\": \"gabriella@adm.com\",\n    \"role\": \"ADMIN\",\n    \"ativo\": true,\n    \"criadoEm\": \"2026-08-07T02:51:52.433982Z\"\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

@@ -56,7 +56,7 @@ def upgrade() -> None:
     sa.Column('email', sa.String(length=150), nullable=False),
     sa.Column('senha_hash', sa.String(length=255), nullable=False),
     sa.Column('role', sa.Enum('ADMIN', 'GERENTE', 'CLIENTE', 'COZINHA', 'ATENDENTE', name='role_enum'), nullable=False),
-    sa.Column('base_legal_tratamento', sa.Enum('CONSENTIMENTO', 'CONTRATO', 'OBRIGACAO_LEGAL', name='base_legal_enum'), nullable=False),
+    sa.Column('base_legal_tratamento', sa.Enum('CONSENTIMENTO', 'CONTRATO', name='base_legal_enum'), nullable=False),
     sa.Column('ativo', sa.Boolean(), nullable=False),
     sa.Column('criado_em', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
     sa.PrimaryKeyConstraint('id')
