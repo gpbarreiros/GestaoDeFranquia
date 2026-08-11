@@ -2,7 +2,7 @@
 Porjeto Backend (API REST) para gestão de uma rede de franquias de restaurantes, desenvolvida como trabalho acadêmico.
 
 ## Swagger produção
-O projeto está publicado e pode ser acessado (sem necessidade de rodar localmente):
+O projeto está publicado e pode ser acessado sem necessidade de rodar localmente:
 
 **Swagger:** https://gestao-franquia-api.onrender.com/docs
 
@@ -13,7 +13,7 @@ Sistema backend que simula o gerenciamento de franquias, contemplando os módulo
 - **Usuários** (`/usuarios`) - cadastro e gestão (admin, gerente, atendente)
 - **Unidades** (`/unidades`) - filiais da franquia
 - **Produtos** (`/produtos`) - catálogo geral
-- **Cardápios** (`/cardapios`) - cardápios por período, vinculados às unidades
+- **Cardápios** (`/cardapios`) - cardápios por período, vinculados às unidades - (Módulo em melhoria)
 - **Estoque** (`/estoque`) - controle por unidade
 - **Pedidos** (`/pedidos`) - criação e acompanhamento
 - **Pagamentos** (`/pagamentos`) - gateway mock (taxa de aprovação configurável)
@@ -27,7 +27,7 @@ Sistema backend que simula o gerenciamento de franquias, contemplando os módulo
 - **Pydantic v2 (validação)**
 - **JWT (autenticação)**
 - **Docker + Docker Compose**
-- Deploy: **Render** (API) + **Neon** (PostgreSQL) - Plano Free. A 1ª requisição pode demorar 
+- Deploy: **Render** (API) + **Neon** (PostgreSQL) 
 
 ## Arquitetura
 Arquitetura em camadas seguindo Arquitetura Limpa(Clean Architecture)
@@ -104,7 +104,6 @@ https://gestao-franquia-api.onrender.com/docs
 
 ## Regras de negócio implementadas
 - Apenas usuários com role `ADMIN` ou `GERENTE` podem criar/atualizar cardápios e produtos
-- Cardápio inativo não pode ter seus itens consultados
 - Pedido só aceita pagamento quando está em status `AGUARDANDO_PAGAMENTO`
 - Pedido já com pagamento aprovado não pode ser pago novamente
 - Pagamento aprovado dispara o crédito de pontos de fidelidade (1 ponto por R$ 1,00 do total)
