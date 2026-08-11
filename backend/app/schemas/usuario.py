@@ -7,22 +7,21 @@ from app.domain.enums import RoleEnum, BaseLegalEnum
 class UsuarioCreate(BaseModel):
     nome: str
     email: EmailStr
-    senha: str
+    senha: str  | None = None
     role: RoleEnum
-    baseLegalTratamento: BaseLegalEnum | None = None
-
+    baseLegalTratamento: BaseLegalEnum 
     @field_validator("senha")
     @classmethod
     def validacao_senha(cls, value: str) -> str:
-        if len(value) < 8:
-            raise ValueError("A senha deve ter pelo menos 8 caracteres.")
+        if len(value) < 8 or value is None or value.strip() == "":
+            raise ValueError("A senha é obrigatória e deve ter pelo menos 8 caracteres.")
         return value
     
-    @field_validator("baseLegalTratamento")
+    @field_validator("baseLegalTratamento", mode="before")
     @classmethod
-    def validacao_baseLegal(cls, value: str) -> str:
-        if len(value) < 8:
-            raise ValueError("A base legal é obrigatoria, CONTRATO ou CONSENTIMENTO.")
+    def validacao_baseLegal(cls, value: BaseLegalEnum) -> BaseLegalEnum:
+        if value not in [BaseLegalEnum.CONTRATO, BaseLegalEnum.CONSENTIMENTO]:
+            raise ValueError("A base legal de tratamento é obrigatória. CONTRATO ou CONSENTIMENTO.")
         return value
 
 

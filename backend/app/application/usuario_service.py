@@ -9,6 +9,24 @@ from app.schemas.usuario import UsuarioCreate, UsuarioUpdate
 
 
 def criar(db: Session, dados: UsuarioCreate, ipOrigem: str | None = None) -> Usuario:
+    if not dados.senha is None and not dados.senha.strip():
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail={
+                "error": "SENHA_OBRIGATORIA",
+                "message": "A senha é obrigatória e deve ter pelo menos 8 caracteres.",
+                "details": [{"field": "senha", "issue": "senha inválida"}],
+            },
+        )
+    if not dados.baseLegalTratamento is None and not dados.baseLegalTratamento.strip(): 
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail={
+                "error": "BASE_LEGAL_OBRIGATORIA",
+                "message": "A base legal de tratamento é obrigatória. CONTRATO ou CONSENTIMENTO.",
+                "details": [{"field": "baseLegalTratamento", "issue": "base legal não fornecida"}],
+            },
+        )
     existente = usuario_repo.buscarPorEmail(db, dados.email)
     if existente:
         raise HTTPException(
